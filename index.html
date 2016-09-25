@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery无缝滚动插件</title>
+	<link rel="stylesheet" href="doc.css"/>
+</head>
+<body>
+	<div class="header">
+		<h1>scrollForever.js</h1>
+	</div>
+	<div class="main">
+		<h2 class="hentry">A simple jQuery plugin that quicky builds scrolling element forever</h2>
+		<div class="article">
+			<h3>插件概述</h3>
+			<p>scrollForever 是一个支持连续无缝滚动和非连续滚动的插件，支持向上和向左滚动，你可以自由设置滚动间隔和速度等</p>
+			<h3>插件特色</h3>
+			<div class="feature" id="feature">
+				<ul class="feature-list">
+					<li class="step">
+						<h4>快速部署</h4>
+						<p>只需要引入插件，并在底部添加相应的代码即可</p>
+					</li>
+					<li class="config">
+						<h4>功能齐全</h4>
+						<p>你能想到的，这个插件都能帮你做到，熟悉参数帮助你更快的上手</p>
+					</li>
+					<li class="code">
+						<h4>代码精简</h4>
+						<p>只要2k的代码就能完成无缝滚动，包括连续滚动和非连续滚动</p>
+					</li>
+				</ul>
+			</div>
+			<h3>演示例子</h3>
+			<div class="a" id="a1">
+				<ul>
+					<li><a href=""><img src="img/1.jpg" alt="默认连续滚动"></a></li>
+					<li><a href=""><img src="img/2.jpg" alt="默认连续滚动"></a></li>
+					<li><a href=""><img src="img/3.jpg" alt="默认连续滚动"></a></li>
+				</ul>
+			</div>
+			<div class="b" id="b1">
+				<div class="b-con">
+					<div><a href=""><img src="img/1.jpg" alt="设置不连续滚动"></a></div>
+					<div><a href=""><img src="img/1.jpg" alt="设置不连续滚动"></a></div>
+					<div><a href=""><img src="img/1.jpg" alt="设置不连续滚动"></a></div>
+				</div>
+			</div>
+			<p class="text-center"><a class="demolink" href="http://caibaojian.com/demo/scrollforever/index0.html" target="_blank">无缝滚动插件版</a><a class="demolink black" href="http://caibaojian.com/demo/scrollforever/index1.html" target="_blank">无缝向左1</a><a href="http://caibaojian.com/demo/scrollforever/index2.html" class="demolink blue" target="_blank">无缝向左2</a><a class="demolink green" href="http://caibaojian.com/demo/scrollforever/index3.html" target="_blank">无缝向上</a><a class="demolink" href="http://caibaojian.com/demo/scrollforever/index4.html" target="_blank">间断向左</a><a class="demolink blue" href="http://caibaojian.com/demo/scrollforever/index5.html" target="_blank">间断向上</a></p>
+			<h3>使用方法</h3>
+			<div class="usage">
+			<input type="radio" id="js" name="cc" checked="checked">
+			<input type="radio" id="html" name="cc">
+			<input type="radio" id="css" name="cc"/>
+			<label for="js">Js</label><label for="html">HTML</label><label for="css">CSS</label>
+			<pre class="js-code"><code>&lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="scrollForever.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$(function(){
+$("#a1").scrollForever();
+})
+&lt;/script&gt;</code></pre>
+			<pre class="html-code"><code>&lt;div class="a" id="a1"&gt;
+&lt;ul&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;li&gt;4&lt;/li&gt;
+&lt;li&gt;5&lt;/li&gt;
+&lt;li&gt;6&lt;/li&gt;
+&lt;li&gt;7&lt;/li&gt;
+&lt;li&gt;8&lt;/li&gt;
+&lt;li&gt;9&lt;/li&gt;
+&lt;li&gt;10&lt;/li&gt;
+&lt;li&gt;11&lt;/li&gt;
+&lt;li&gt;12&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+			<pre class="css-code"><code>.b{height: 170px; overflow: hidden; width: 490px; margin-left:auto; margin-right: auto;}
+.b-con div{}</code></pre>
+</div>
+			<h3>参数介绍</h3>
+<div class="table-container">
+<table class="table">
+<thead>
+<tr>
+<td>参数名</td>
+<td>默认值</td>
+<td>描述</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>continuous</td>
+<td>true</td>
+<td>是否连续</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>0</td>
+<td>非连续滚动时每次的滑动距离，可以自定义，如果没有自定义则根据子元素和滚动数量来决定</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>'left'</td>
+<td>滚动方面，可以为left和top</td>
+</tr>
+<tr>
+<td>container</td>
+<td>'ul'</td>
+<td>外层元素</td>
+</tr>
+<tr>
+<td>innner</td>
+<td>'li'</td>
+<td>子元素</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>1000</td>
+<td>非连续滚动速度</td>
+</tr>
+<tr>
+<td>delayTime</td>
+<td>0</td>
+<td>滚动间隔，非连续滚动为2000ms,连续滚动为20ms,可以自定义</td>
+</tr>
+<tr>
+<td>num</td>
+<td>1</td>
+<td>非连续一次滚动的数量</td>
+</tr>
+</tbody>
+</table>
+</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="scrollForever.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#feature').scrollForever({delayTime:30});
+		$("#a1").scrollForever({continuous:false,speed:1500});
+		$("#b1").scrollForever({continuous:false,dir:"top",container:".b-con",inner:"div",delayTime:3000});
+	})
+	</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=15910806" charset="UTF-8"></script>
+</body>
+</html>
